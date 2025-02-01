@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Baratie - Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Clemente+Regular&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Clemente Regular', serif;
+            background-color: #f4f4f9;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out;
+        }
+
+        /* Slide-down animation for header */
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header img {
+            width: 250px;
+        }
+
+        header .big {
+            font-family: 'Clemente Regular', serif;
+            font-size: 70px;
+            color: #1a2b63;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: #1a2b63;
+            margin-top: 10px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .reservation-container {
+            background-color: white;
+            border: 4px solid #c0392b;
+            padding: 20px 10px;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Slide-in animation for reservation form */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .reservation-heading {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .reservation-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .reservation-form input,
+        .reservation-form select,
+        .reservation-form textarea {
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out, border-color 0.3s ease;
+        }
+
+        .reservation-form input:focus,
+        .reservation-form select:focus,
+        .reservation-form textarea:focus {
+            transform: scale(1.05);
+            border-color: #f39c12;
+            animation: bounceIn 0.3s ease-out;
+        }
+
+        /* Bounce-in effect for form fields on focus */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .reservation-form input[type="submit"] {
+            background-color: #f39c12;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .reservation-form input[type="submit"]:hover {
+            background-color: #e74c3c;
+            transform: scale(1.05);
+        }
+
+        .policy-info {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .policy-info i {
+            color: #f39c12;
+        }
+
+        footer {
+            background-color: #1a2b63;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            animation: fadeInFooter 1s ease-out;
+        }
+
+        /* Fade-in effect for footer */
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Clemente Regular', serif;
+            background-color: #f4f4f9;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out;
+        }
+
+        /* Slide-down animation for header */
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header img {
+            width: 250px;
+        }
+
+        header .big {
+            font-family: 'Clemente Regular', serif;
+            font-size: 70px;
+            color: #1a2b63;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: #1a2b63;
+            margin-top: 10px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .reservation-container {
+            background-color: white;
+            border: 4px solid #c0392b;
+            padding: 20px 10px;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Slide-in animation for reservation form */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .reservation-heading {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .reservation-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .reservation-form input,
+        .reservation-form select,
+        .reservation-form textarea {
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out, border-color 0.3s ease;
+        }
+
+        .reservation-form input:focus,
+        .reservation-form select:focus,
+        .reservation-form textarea:focus {
+            transform: scale(1.05);
+            border-color: #f39c12;
+            animation: bounceIn 0.3s ease-out;
+        }
+
+        /* Bounce-in effect for form fields on focus */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .reservation-form input[type="submit"] {
+            background-color: #f39c12;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .reservation-form input[type="submit"]:hover {
+            background-color: #e74c3c;
+            transform: scale(1.05);
+        }
+
+        .policy-info {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .policy-info i {
+            color: #f39c12;
+        }
+
+        footer {
+            background-color: #1a2b63;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            animation: fadeInFooter 1s ease-out;
+        }
+
+        /* Fade-in effect for footer */
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 10px;
+        } body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Clemente Regular', serif;
+            background-color: #f4f4f9;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out;
+        }
+
+        /* Slide-down animation for header */
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header img {
+            width: 250px;
+        }
+
+        header .big {
+            font-family: 'Clemente Regular', serif;
+            font-size: 70px;
+            color: #1a2b63;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: #1a2b63;
+            margin-top: 10px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .reservation-container {
+            background-color: white;
+            border: 4px solid #c0392b;
+            padding: 20px 10px;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Slide-in animation for reservation form */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .reservation-heading {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .reservation-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .reservation-form input,
+        .reservation-form select,
+        .reservation-form textarea {
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out, border-color 0.3s ease;
+        }
+
+        .reservation-form input:focus,
+        .reservation-form select:focus,
+        .reservation-form textarea:focus {
+            transform: scale(1.05);
+            border-color: #f39c12;
+            animation: bounceIn 0.3s ease-out;
+        }
+
+        /* Bounce-in effect for form fields on focus */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .reservation-form input[type="submit"] {
+            background-color: #f39c12;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .reservation-form input[type="submit"]:hover {
+            background-color: #e74c3c;
+            transform: scale(1.05);
+        }
+
+        .policy-info {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .policy-info i {
+            color: #f39c12;
+        }
+
+        footer {
+            background-color: #1a2b63;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            animation: fadeInFooter 1s ease-out;
+        }
+
+        /* Fade-in effect for footer */
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="./baratiee.png" alt="Baratie Logo">
+        <div class="big">Reservation</div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href=".//home.html">Home</a></li>
+            <li><a href=".//menu.html">Menu</a></li>
+            <li><a href="location.html">Hours & Location</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href=".//about.html">Our Story</a></li>
+        </ul>
+    </nav>
+
+    <!-- Reservation Section -->
+    <div class="reservation-container">
+        <div class="reservation-heading">Book a Table</div>
+
+        <!-- Reservation Form -->
+        <form class="reservation-form" action="submit_reservation.html" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <input type="number" name="guests" placeholder="Number of Guests" required>
+            <input type="datetime-local" name="reservation_date" required>
+            <textarea name="special_requests" placeholder="Special Requests (optional)" rows="4"></textarea>
+            <input type="submit" value="Reserve a Table">
+        </form>
+
+        <!-- Policy Information -->
+        <div class="policy-info">
+            <p><i class="fas fa-exclamation-circle"></i> <strong>Cancellation Policy:</strong> Please cancel at least 24 hours before your reservation time to avoid any charges.</p>
+            <p><i class="fas fa-clock"></i> <strong>Hours of Operation:</strong> We are open daily from 11:00 AM to 10:00 PM.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The Baratie | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Baratie - Greek Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Clemente+Regular&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #f4f4f9;
+           
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            width: 350px;
+        }
+
+        header .big {
+            font-family: 'Clemente Regular', serif;
+            font-size: 70px;
+            color: #1a2b63;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Animation for Fade In */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Styles (shows the spcs of the nav bar) */
+        nav {
+            background-color: #1a2b63;
+            margin-top: 10px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {       /*this tag sets ALL the contents of the list*/
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li { /*here we can set each links how would it work*/
+            margin: 0 40px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            transition: all 0.3s ease;
+            animation: fadeIn 2s forwards
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        /* the home page */
+        .hero {
+            background-image: url(https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?cs=srgb&dl=pexels-pixabay-262978.jpg&fm=jpg);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .cta-button {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 30px 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .about-us h2 {
+            font-size: 2rem;
+            color: #1a2b63;
+        }
+
+        .about-us p {
+            font-size: 1.1rem;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Featured Menu Section */
+        .featured-menu {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .featured-menu h2 {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.6rem;
+            color: #1a2b63;
+            margin-top: 15px;
+        }
+
+        .menu-item p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 50px 10px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            margin-bottom: 30px;
+        }
+
+        .testimonials .testimonial-item {
+            display: inline-block;
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .testimonials .testimonial-item p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .testimonials .testimonial-item h3 {
+            font-size: 1.3rem;
+            color: #1a2b63;
+        }
+
+        /* Newsletter Signup Section */
+        .newsletter {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            margin-bottom: 20px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            font-size: 1rem;
+            width: 300px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #1a2b63;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="./baratiee.png" alt="Baratie Logo">
+        <div class="big">The Baratie</div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href=".//home.html">Home</a></li>
+            <li><a href=".//menu.html">Menu</a></li>
+            <li><a href="location.html">Hours & Location</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="./about.html">Our Story</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Baratie</h1>
+            <p>A Taste of Paradise</p>
+        </div>
+    </section>
+
+    <!-- says the stuff about baratie -->
+    <section class="about-us">
+        <h2>About Baratie</h2>
+        <p>Baratie is a unique dining experience where every dish is crafted with love and passion...</p>
+    </section>
+
+    <!--Celebs-->
+    <section class="testimonials">
+        <h2>What Our Guests Are Saying</h2>
+        <div class="testimonial-item">
+            <p>"An amazing dining experience. The food is out of this world!"</p>
+            <h3>Gol D. Roger</h3>
+        </div>
+        <div class="testimonial-item">
+            <p>"Baratie is my new favorite restaurant! Great atmosphere and incredible flavors."</p>
+            <h3>Edward Newgate</h3>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section class="newsletter">
+        <h2>Sign Up for Special Offers</h2>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </section>
+    <!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 The Baratie | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+
+    
+</body>
+
+</html>

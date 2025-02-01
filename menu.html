@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Baratie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Clemente+Regular&display=swap" rel="stylesheet"> <!-- Greek-style font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- Font Awesome for Icons -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Clemente Regular', serif;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            width: 250px;
+        }
+
+        header .big {
+            font-family: 'Clemente Regular', serif;
+            font-size: 70px;
+            color: #1a2b63;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            letter-spacing: 3px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        nav {
+            background-color: #1a2b63;
+            margin-top: 10px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .menu-container {
+            background-color: white;
+            border: 4px solid #c0392b;
+            padding: 20px 10px;
+            width: 80%;
+            max-width: 1000px;
+            margin: 50px auto 0;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .menu-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-top: 2px solid #f1c40f;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item h3 {
+            font-size: 1.6rem;
+            color: #1a2b63;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .menu-item p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .menu-item .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        .menu-heading {
+            font-size: 2.2rem;
+            color: #1a2b63;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .greek-icon {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-right: 10px;
+        }
+
+        .dish-icons {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .dish-icons i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dish-icons i:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            background-color: #1a2b63;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="./baratiee.png" alt="Baratie Logo">
+        <div class="big">Menu</div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href=".//home.html">Home</a></li>
+            <li><a href=".//menu.html">Menu</a></li>
+            <li><a href="location.html">Hours & Location</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href=".//about.html">Our Story</a></li>
+        </ul>
+    </nav>
+
+    <!-- Menu Section: Starters -->
+    <div class="menu-container">
+        <div class="menu-heading">Starters</div>
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-apple-alt"></i></span>Greek Salad</h3>
+            <p>Fresh tomatoes, cucumber, olives, onions, and feta cheese, drizzled with olive oil.</p>
+            <div class="price">$9.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-lemon"></i></span>Dolmas</h3>
+            <p>Stuffed grape leaves with rice and herbs, served with yogurt sauce.</p>
+            <div class="price">$7.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-fire"></i></span>Saganaki</h3>
+            <p>Flaming cheese served with pita bread.</p>
+            <div class="price">$12.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-fish"></i></span>Fried Calamari</h3>
+            <p>Crispy fried squid served with a tangy marinara sauce.</p>
+            <div class="price">$11.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Menu Section: Main Course -->
+    <div class="menu-container">
+        <div class="menu-heading">Main Course</div>
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-bacon"></i></span>Spaghetti Carbonara</h3>
+            <p>Classic Italian pasta with creamy sauce, bacon, and Parmesan cheese.</p>
+            <div class="price">$15.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-pizza-slice"></i></span>Margherita Pizza</h3>
+            <p>Traditional pizza with fresh mozzarella, basil, and a tomato base.</p>
+            <div class="price">$12.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-fish"></i></span>Grilled Salmon</h3>
+            <p>Perfectly grilled salmon fillet served with a lemon butter sauce.</p>
+            <div class="price">$19.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-drumstick-bite"></i></span>Chicken Souvlaki</h3>
+            <p>Grilled chicken skewers served with pita and a side of tzatziki sauce.</p>
+            <div class="price">$14.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Menu Section: Desserts -->
+    <div class="menu-container">
+        <div class="menu-heading">Desserts</div>
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-cake"></i></span>Baklava</h3>
+            <p>Sweet pastry filled with nuts and honey syrup.</p>
+            <div class="price">$6.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-cookie"></i></span>Kourabiedes</h3>
+            <p>Almond shortbread cookies dusted with powdered sugar.</p>
+            <div class="price">$5.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-ice-cream"></i></span>Loukoumades</h3>
+            <p>Greek-style donuts drizzled with honey and sprinkled with cinnamon.</p>
+            <div class="price">$7.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-lemon"></i></span>Lemon Cake</h3>
+            <p>Fluffy cake with a zesty lemon glaze.</p>
+            <div class="price">$5.49</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <h3><span class="greek-icon"><i class="fas fa-birthday-cake"></i></span>Greek Yogurt with Honey</h3>
+            <p>Traditional Greek yogurt served with a drizzle of honey and walnuts.</p>
+            <div class="price">$4.99</div>
+            <div class="dish-icons">
+                <i class="fas fa-fork"></i>
+                <i class="fas fa-spoon"></i>
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The Baratie | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+</body>
+
+</html>

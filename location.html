@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Baratie - Greek Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Clemente+Regular&display=swap" rel="stylesheet"> <!-- Greek-style font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- Font Awesome for Icons -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Clemente Regular', serif;
+            background-color: #f4f4f9;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        header img {
+            width: 250px;
+            animation: scaleIn 1.5s ease-out;
+        }
+
+        header .big {
+            font-family: 'Clemente Regular', serif;
+            font-size: 70px;
+            color: #1a2b63;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
+            letter-spacing: 3px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            background-color: #1a2b63;
+            margin-top: 10px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            transform: translateY(-5px);
+        }
+
+        .location-section {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 50px auto;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .location-heading {
+            font-size: 2.5rem;
+            color: #1a2b63;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            animation: slideInLeft 1.5s ease-out;
+        }
+
+        .location-item {
+            font-size: 1.3rem;
+            color: #333;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f4f4f9;
+            border: 2px solid #1a2b63;
+            border-radius: 8px;
+            position: relative;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .location-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .location-item i {
+            color: #f39c12;
+            margin-right: 10px;
+            font-size: 1.7rem;
+            transition: color 0.3s ease;
+        }
+
+        .location-item:hover i {
+            color: #e74c3c;
+        }
+
+        .location-time {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 10px;
+            font-style: italic;
+            transition: color 0.3s ease;
+        }
+
+        .location-item:hover .location-time {
+            color: #e74c3c;
+        }
+
+        footer {
+            background-color: #1a2b63;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #e74c3c;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="./baratiee.png" alt="Baratie Logo">
+        <div class="big">Hours and Locations</div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href=".//home.html">Home</a></li>
+            <li><a href=".//menu.html">Menu</a></li>
+            <li><a href="location.html">Hours & Location</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href=".//about.html">Our Story</a></li>
+        </ul>
+    </nav>
+
+    <!-- Location Section -->
+    <div class="location-section">
+        <div class="location-heading">
+            <span class="greek-icon"><i class="fas fa-map-marker-alt"></i></span> Our Locations Around the World
+        </div>
+        <div class="location-item">
+            <i class="fas fa-map-marker-alt"></i> 123 Mykonos Street, Athens, Greece
+            <div class="location-time">Hours: Mon-Sun, 11:00 AM - 10:00 PM</div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-map-marker-alt"></i> 654 Corfu Crescent, Corfu Island, Greece
+            <div class="location-time">Hours: Mon-Sun, 11:00 AM - 10:00 PM</div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-map-marker-alt"></i> 432 Sunset Boulevard, Los Angeles, USA
+            <div class="location-time">Hours: Mon-Sun, 11:00 AM - 10:00 PM</div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-map-marker-alt"></i> 654 King Street, London, UK
+            <div class="location-time">Hours: Mon-Sun, 10:00 AM - 9:00 PM</div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-map-marker-alt"></i> 211 Tokyo Road, Tokyo, Japan
+            <div class="location-time">Hours: Mon-Sun, 12:00 PM - 10:00 PM</div>
+        </div>
+        <div class="location-item">
+            <i class="fas fa-map-marker-alt"></i> 123 Sydney Drive, Sydney, Australia
+            <div class="location-time">Hours: Mon-Sun, 11:00 AM - 10:00 PM</div>
+        </div>
+    </div>
+
+    <!-- Embedded Google Map showing all locations -->
+<div class="google-map-container" style="margin-top: 50px; text-align: center;">
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1k-Y0ixVCiM6K97wNvmWFzO9MmitNm2g&ehbc=2E312F" width="700" height="500"></iframe> 
+</div>
+   
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 The Baratie | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+</body>
+
+</html>
